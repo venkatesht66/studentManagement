@@ -4,7 +4,6 @@ const createStudent = async (req, res) => {
     try {
         const { name, phone, course, fees } = req.body;
         const student = new Student({ name, phone, course, fees });
-
         await student.save();
         res.status(201).json({ message: "Student Created Successfully", student });
     } catch (error) {
@@ -70,5 +69,7 @@ const deleteStudent = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 };
+
+//Hello World 
 
 module.exports = { createStudent, getStudents, singleStudent, updateStudent, deleteStudent };
